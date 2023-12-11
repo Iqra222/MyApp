@@ -1,11 +1,23 @@
-import { View, StyleSheet, TextInput, Button } from "react-native";
+import { View, Text, Image, StyleSheet, TextInput, Button } from "react-native";
 
 export default function App() {
   return (
     <View style={styles.mainContainer}>
-      <TextInput style={styles.input} placeholder=" Email" />
-      <TextInput style={styles.input} placeholder="Password" />
-      <Button title={"login"} />
+      <Image source={require("./assets/icon.png")} style={styles.logo} />
+      <Text style={styles.heading}> HI we are here</Text>
+      <TextInput
+        style={styles.input}
+        keyboardType="email-address"
+        placeholder=" Email"
+      />
+      <TextInput
+        style={styles.input}
+        secureTextEntry
+        keyboardType="number-pad"
+        placeholder="Password"
+      />
+      <Text style={styles.forgotPassword}>forgot Password</Text>
+      <Button title={"login"} color={"pink"} />
     </View>
   );
 }
@@ -18,6 +30,23 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 
+  logo: {
+    height: 100,
+    width: 100,
+    alignSelf: "center",
+  },
+  heading: {
+    fontSize: 20,
+    textDecorationLine: "underline",
+    alignSelf: "center",
+    marginVertical: 10,
+  },
+  forgotPassword: {
+    fontSize: 15,
+    margin: 10,
+    textDecorationLine: "underline",
+    alignSelf: "flex-end",
+  },
   input: {
     backgroundColor: "white",
     padding: 10,
