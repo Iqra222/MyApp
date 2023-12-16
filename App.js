@@ -1,6 +1,10 @@
 import { View, Text, Image, StyleSheet, TextInput, Button } from "react-native";
 
 export default function App() {
+  const onLoginPressed = () => {
+    alert(" Hello from login Button");
+  };
+
   return (
     <View style={styles.mainContainer}>
       <Image source={require("./assets/icon.png")} style={styles.logo} />
@@ -17,7 +21,7 @@ export default function App() {
         placeholder="Password"
       />
       <Text style={styles.forgotPassword}>forgot Password</Text>
-      <Button title={"login"} color={"pink"} />
+      <Button title={"login"} color={"pink"} onPress={onLoginPressed} />
     </View>
   );
 }
